@@ -1,0 +1,15 @@
+html * {
+	box-sizing: border-box;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+}
+.app-container {
+	margin: 20px;
+	padding: 15px;
+	border: 1px solid lightgray;
+}
+.app-container h1 {
+	color: #31d970;
+}

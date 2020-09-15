@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Maven + Spring Boot + VueJS example</title>
+  <meta name="description" content="BurgerJointsInTartu">
+  <meta name="author" content="ajakupson">
+
+  <link rel="stylesheet" th:href="@{/front-end/assets/css/main.css}">
+
+</head>
+
+<body>
+  <div id="app" class="app-container">
+  	<h1>This is application entry point</h1>
+  </div>
+    <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script th:src="@{/front-end/vuejs-app/build/main.bundle.js}"></script>
+</body>
+</html>
