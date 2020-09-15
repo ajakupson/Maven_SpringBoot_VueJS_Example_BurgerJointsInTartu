@@ -13,3 +13,26 @@ html, body {
 .app-container h1 {
 	color: #31d970;
 }
+.container {
+	margin: 20px;
+	padding: 15px;
+	border: 1px solid lightgray;
+}
+.container h1 {
+	color: #31d970;
+}
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+	padding: 5px;
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: underline;
+}
+#map-container {
+	position: relative;
+	width: 640px;
+	height: 480px;
+}

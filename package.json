@@ -10,9 +10,10 @@
   },
   "watch": {
     "build": [
-      "./src/main/resources/front-end/vuejs-app/*.js",
-      "./src/main/resources/front-end/vuejs-app/layouts/*.js",
-      "./src/main/resources/front-end/vuejs-app/components/*.js"
+      "./src/main/resources/static/front-end/vuejs-app/*.js",
+      "./src/main/resources/static/front-end/vuejs-app/layouts/*.js",
+      "./src/main/resources/static/front-end/vuejs-app/components/*.js",
+      "./src/main/resources/static/front-end/vuejs-app/pages/*.js"
     ]
   },
   "babel": {

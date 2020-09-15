@@ -10,5 +10,4 @@ public class EntryPointController {
 	public String index() {
 		return "index";
 	}
-
 }
