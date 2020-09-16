@@ -1,0 +1,135 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/recognize": {
+      "post": {
+        "operationId": "findBurgerInUrls",
+        "summary": "Finds the burger image in a list of FourSquare venue image URLs.",
+        "description": "\tGiven a list of FourSquare venue image URLs, this API lets you query if any of the image URLs is about a burger. The API responds with the URL that is about a burger, or a 404 value if no burger was found.",
+        "responses": {
+          "200": {
+            "description": "OK response",
+            "x-oad-type": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "x-oad-type": "object",
+                  "type": "object",
+                  "title": "Burger URL",
+                  "properties": {
+                    "urlWithBurger": {
+                      "x-oad-type": "string",
+                      "type": "string",
+                      "title": "URL of the image",
+                      "description": "The URL of the FourSquare image that includes a burger. It's one URL from the list of URLs in the request.",
+                      "readOnly": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Any client side error returns a HTTP 400 response. This includes malformed body, no valid URLs, etc.",
+            "x-oad-type": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "x-oad-type": "object",
+                  "type": "object",
+                  "title": "The 400 response",
+                  "description": "The 400 response includes a string error message.",
+                  "properties": {
+                    "error": {
+                      "x-oad-type": "string",
+                      "type": "string",
+                      "title": "The error message",
+                      "description": "\"Image fetch failed\" = something went wrong with downloading the image. Error logs are in Lambda.\n\"Label detect failed\" = something went wrong when sending the image to AWS Rekognition.\n\"Nothing to fetch\" = the image URL was filtered for FourSquare URLs and no FourSquare URLs were found.\n\"Invalid body\" = the request object is wrong. Please re-check the request object's shape (JSON object, key \"urls\" is an array of strings)",
+                      "enum": [
+                        "Image fetch failed",
+                        "Nothing to fetch",
+                        "Invalid body",
+                        "Label detect failed"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "This response is generated when no burger image was found. This means, that all URLs that were sent to the API were passed through image recognition, and none of them had the label \"Burger\" with > 80% certainty. The UI should display a default image.",
+            "x-oad-type": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "x-oad-type": "object",
+                  "type": "object",
+                  "title": "Response when no burger image found.",
+                  "properties": {
+                    "error": {
+                      "x-oad-type": "string",
+                      "type": "string",
+                      "title": "The error message",
+                      "description": "The error message returned",
+                      "default": "No burger for you",
+                      "readOnly": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "x-oad-type": "object",
+                "type": "object",
+                "title": "req",
+                "description": "The request body looks like this:",
+                "properties": {
+                  "urls": {
+                    "x-oad-type": "array",
+                    "type": "array",
+                    "title": "The list of URLs to request image recognition for.",
+                    "description": "This parameter contains the list of URLs to request image recognition for. ",
+                    "items": {
+                      "x-oad-type": "string",
+                      "type": "string",
+                      "title": "URL",
+                      "description": "The URL to request recognition for. It has to match the following regex:\n\n`/^https:\\/\\/igx.4sqi.net\\/img\\/general\\/500x500\\/(\\d+)_[\\w-_]+\\.jpg$/`"
+                    }
+                  }
+                },
+                "required": [
+                  "urls"
+                ]
+              }
+            }
+          },
+          "description": "The request body contains a list of URLs to fetch and recognize. All of these URLs will be downloaded and sent to AWS Rekognition for parsing, and the first one that includes the word \"Burger\" in their detected labels, will be returned as the HTTP response.",
+          "required": true,
+          "x-oad-type": "parameter"
+        }
+      },
+      "x-oad-type": "operation"
+    }
+  },
+  "info": {
+    "title": "Qminder Hiring - Burger API",
+    "version": "1.0.0",
+    "description": "\tThis API includes API calls to figure out if an image has a burger in it.",
+    "termsOfService": "https://www.qminder.com/terms-of-service-and-privacy-policy/",
+    "contact": {
+      "email": "careers@qminder.com",
+      "url": "https://www.qminder.com/careers/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://pplkdijj76.execute-api.eu-west-1.amazonaws.com/prod/"
+    }
+  ]
+}

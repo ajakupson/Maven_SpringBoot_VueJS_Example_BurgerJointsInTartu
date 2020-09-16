@@ -14,7 +14,8 @@ export default {
     },
 	data: function() {
 		return {
-			hereMapsPlatform: null
+			hereMapsPlatform: null,
+			mapMarkersData: [],
 		}
 	},
 	created: function() {},
@@ -25,29 +26,10 @@ export default {
 		    .get('/api/burger-joints')
 		    .then(response => {
 		        console.log("response.data", response.data);
-		    })
-		    .catch(error => console.log(error));
-		
-		/*var that = this;
-		
-		var fourSquareUrl = 'https://api.foursquare.com/v2/venues/explore?' +
-							 'client_id=ULTN0IESIICWPHWBN1RHEVGCK3HXNN1TD2MQ1PT2M0AZVNQL&' +
-							 'client_secret=RCGHJXDJ1J5KDCO3BT3NB5P0BAT3I0DXMM4YJXWMVX3AWNV2&' +
-							 'v=20180323&' +
-							 'limit=1000&' +
-							 'll=58.378025, 26.728493&' +
-							 'query=mcdonalds&' + 
-							 'radius=5000';
-		
-		axios
-        	 .get(fourSquareUrl)
-             .then(response => {
-                console.log("response.data", response.data);
 
-				var items = response.data.response.groups[0].items;
-				console.log("response.data.response.groups", response.data.response.groups);
-
-				setTimeout(function() {
+				if(response.data) {
+					this.mapMarkersData = response.data;
+					
 					this.hereMapsPlatform = new H.service.Platform({
 			  			'apikey': 'ReRwqKNLBA7zeTBC27_hlEPk5w6cHv-43WNAoORo_ho'
 					});
@@ -63,37 +45,45 @@ export default {
 					var ui = H.ui.UI.createDefault(map, defaultLayers);
 					var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 					
-					console.log("items", items);
-					if(items) {
-						for(var i = 0; i < items.length; i++) {
-							addMarkersToMap(map, items[i].venue.location.lat, items[i].venue.location.lng);
-							//document.body.innerHTML += '<img src="' + items[i].venue.categories[0].icon.prefix + items[i].venue.categories[0].id + items[i].venue.categories[0].icon.suffix + '">';
+					this.mapMarkersData.forEach(mapMarkerData => {
 						
-						var fourSquareUrl2 = 'https://api.foursquare.com/v2/venues/' + items[i].venue.id +'/photos?' +
-							 'client_id=ULTN0IESIICWPHWBN1RHEVGCK3HXNN1TD2MQ1PT2M0AZVNQL&' +
-							 'client_secret=RCGHJXDJ1J5KDCO3BT3NB5P0BAT3I0DXMM4YJXWMVX3AWNV2&' +
-							 'limit=10&' + 
-							 'v=20150916';
+						// to fix missing address
+						opencage
+  							.geocode({ q: mapMarkerData.lat + ', ' + mapMarkerData.lng, key: 'b3f0b519255244b389a33cf8b23b726f' })
+  							.then(data => {
+    							
+								  if (data.status.code == 200) {
+								  	if (data.results.length > 0) {
+								      var place = data.results[0];
+		
+								      //console.log(place.formatted);
+								      //console.log(place.components.road);
+									  //console.log(place.components.house_number);
+							
+									  mapMarkerData.address = place.formatted;
+									}
+								  }
 						
-								axios
-        	 						.get(fourSquareUrl2)
-             						.then(response => {
-                						console.log("photos", response.data);
-									})
-									.catch(error => console.log(error));
-						}	
-					}
-				}, 1000);
-				
-				
-				function addMarkersToMap(map, lat, lng) {
-					console.log(lat, lng);
-				    var marker = new H.map.Marker({lat: lat, lng: lng});
-				    map.addObject(marker);
+								  var domMapMarker = `<div class="dom-map-marker">
+													  	<p class="name">${mapMarkerData.name}</p><br/>
+														<p class="address">Address: ${mapMarkerData.address}</p>
+														<div class="burger-img-container">
+															<img src="../front-end/assets/img/hamburger-icon.png"/>
+														</div>
+													  </div>`;
+											
+								 var mapMarker = new H.map.DomIcon(domMapMarker),
+	    						 coords = {lat: mapMarkerData.lat, lng: mapMarkerData.lng },
+	    						 marker = new H.map.DomMarker(coords, {icon: mapMarker});
+								 map.addObject(marker);
+  							})
+  							.catch(error => {
+    							console.log('error', error.message);
+  							});
+					});	
 				}
-				
-             })
-             .catch(error => console.log(error));*/
+		    })
+		    .catch(error => console.log(error));
 
 	},
 	methods: {
