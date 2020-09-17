@@ -1,6 +1,5 @@
 package BurgerJointsInTartu.Services;
 
-import java.io.ByteArrayInputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -9,14 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.json.JSONObject;
-
-import com.amazonaws.http.HttpMethodName;
-import com.google.gson.Gson;
-
 import BurgerJointsInTartu.Models.MapMarker;
 import BurgerJointsInTartu.Models.PhotoGroupWrapper;
-import BurgerJointsInTartu.Services.aws.ApiGatewayResponse;
 import BurgerJointsInTartu.Services.aws.JsonApiGatewayCaller;
 import fi.foyt.foursquare.api.FoursquareApi;
 import fi.foyt.foursquare.api.FoursquareApiException;
@@ -32,8 +25,8 @@ public class FoursquareService {
 	private final String FOURSQUARE_CLIENT_SECRET = "JFFGBVR5VJGWPKYYGOHYRJ04ITKYAXFYIIW5CJCBALAMOWH5";
 	private FoursquareApi foursquareApi;
 	
-	private final String AWS_IAM_ACCESS_KEY = "{KEY}";
-	private final String AWS_IAM_SECRET_ACCESS_KEY = "{SECRET}";
+	private final String AWS_IAM_ACCESS_KEY = "AKIAJ2VOITPUSU4R45TA";
+	private final String AWS_IAM_SECRET_ACCESS_KEY = "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";
 	private final String AWS_REGION = "eu-west-1";
 	private final String AWS_API_GATEWAY_ENPOINT = "https://pplkdijj76.execute-api.eu-west-1.amazonaws.com/prod";
 	

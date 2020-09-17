@@ -1,5 +1,9 @@
 package BurgerJointsInTartu.Services.aws;
 
+import java.io.InputStream;
+import java.net.URI;
+import java.util.Collections;
+
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.ClientConfiguration;
@@ -21,10 +25,6 @@ import com.amazonaws.transform.JsonErrorUnmarshaller;
 import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
 import com.fasterxml.jackson.databind.JsonNode;
-
-import java.io.InputStream;
-import java.net.URI;
-import java.util.Collections;
 
 public class JsonApiGatewayCaller extends AmazonWebServiceClient {
     private static final String API_GATEWAY_SERVICE_NAME = "execute-api";

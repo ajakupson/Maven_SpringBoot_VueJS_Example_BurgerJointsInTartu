@@ -1,9 +1,9 @@
 package BurgerJointsInTartu.Services.aws;
 
+import java.io.IOException;
+
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.util.IOUtils;
-
-import java.io.IOException;
 
 public class ApiGatewayResponse {
     private final HttpResponse httpResponse;
