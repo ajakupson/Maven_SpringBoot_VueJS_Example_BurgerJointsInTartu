@@ -30,7 +30,6 @@ public class JsonApiGatewayCaller extends AmazonWebServiceClient {
     private static final String API_GATEWAY_SERVICE_NAME = "execute-api";
 
     private final AWSCredentialsProvider credentials;
-    private final String apiKey;
     private final AWS4Signer signer;
 
     private final JsonResponseHandler<ApiGatewayResponse> responseHandler;
@@ -41,7 +40,6 @@ public class JsonApiGatewayCaller extends AmazonWebServiceClient {
         super(new ClientConfiguration());
 
         this.credentials = new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKey, secretAccessKey));
-        this.apiKey = apiKey;
         this.endpoint = endpoint;
 
         this.signer = new AWS4Signer();
