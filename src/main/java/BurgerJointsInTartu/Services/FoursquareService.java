@@ -1,5 +1,6 @@
 package BurgerJointsInTartu.Services;
 
+import java.io.ByteArrayInputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -8,8 +9,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.http.HttpMethodName;
+
 import BurgerJointsInTartu.Models.MapMarker;
 import BurgerJointsInTartu.Models.PhotoGroupWrapper;
+import BurgerJointsInTartu.Services.aws.ApiGatewayResponse;
 import BurgerJointsInTartu.Services.aws.JsonApiGatewayCaller;
 import fi.foyt.foursquare.api.FoursquareApi;
 import fi.foyt.foursquare.api.FoursquareApiException;
@@ -22,7 +26,7 @@ import fi.foyt.foursquare.api.entities.VenuesSearchResult;
 public class FoursquareService {
 
 	private final String FOURSQUARE_CLIENT_ID = "ULTN0IESIICWPHWBN1RHEVGCK3HXNN1TD2MQ1PT2M0AZVNQL";
-	private final String FOURSQUARE_CLIENT_SECRET = "JFFGBVR5VJGWPKYYGOHYRJ04ITKYAXFYIIW5CJCBALAMOWH5";
+	private final String FOURSQUARE_CLIENT_SECRET = "ZL0BMF3ZAUAUAEM5W3SQI5FOLSVUSMYL0QE11SVFNRCJHACC";
 	private FoursquareApi foursquareApi;
 	
 	private final String AWS_IAM_ACCESS_KEY = "AKIAJ2VOITPUSU4R45TA";
@@ -68,7 +72,8 @@ public class FoursquareService {
 	
 	public List<MapMarker> GetMapMarkers(String latLng, String[] keyWords) throws FoursquareApiException, URISyntaxException {
 		List<CompactVenue> venues = this.SearchForJoints(latLng, keyWords);
-		List<PhotoGroupWrapper> venuePhotos = this.SearchForVenuePhotos(venues, 10);
+		List<PhotoGroupWrapper> venuePhotos = new ArrayList<PhotoGroupWrapper>();
+		//List<PhotoGroupWrapper> venuePhotos = this.SearchForVenuePhotos(venues, 100);
 		
 		//final String exampleJsonRequest = "{ \"urls\": [\"https://igx.4sqi.net/img/general/500x500/4495867__HsoPFjbsWlCOjVut_11I_LwSNCnvwqm8R_D7bXiYus.jpg\"] }";
 		
@@ -96,8 +101,8 @@ public class FoursquareService {
 	        }
 			jsonRequest += "\n]\n}" ;
 			System.out.println(jsonRequest);
-			//ApiGatewayResponse response = caller.execute(HttpMethodName.POST, "/recognize", new ByteArrayInputStream(jsonRequest.getBytes()));
-	        //System.out.println(response.getBody());
+			ApiGatewayResponse response = caller.execute(HttpMethodName.POST, "/recognize", new ByteArrayInputStream(jsonRequest.getBytes()));
+	        System.out.println(response.getBody());
 	        
 			//foundPhotos.put(venuePhotoWrapper.getVenueId(), photoUrl);
 		}

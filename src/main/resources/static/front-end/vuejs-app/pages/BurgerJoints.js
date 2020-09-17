@@ -22,6 +22,21 @@ export default {
 	mounted: function() {
 		console.log("burger joints mounted");
 		
+		this.hereMapsPlatform = new H.service.Platform({
+			'apikey': 'ReRwqKNLBA7zeTBC27_hlEPk5w6cHv-43WNAoORo_ho'
+		});
+		var defaultLayers = this.hereMapsPlatform.createDefaultLayers();
+		var map = new H.Map(
+    		document.getElementById('map-container'),
+    		defaultLayers.vector.normal.map,
+    		{
+      			zoom: 10,
+      			center: { lat: 58.378025, lng: 26.728493 } // default Tartu
+    		});
+
+		var ui = H.ui.UI.createDefault(map, defaultLayers);
+		var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+		
 		axios
 		    .get('/api/burger-joints')
 		    .then(response => {
@@ -29,22 +44,6 @@ export default {
 
 				if(response.data) {
 					this.mapMarkersData = response.data;
-					
-					this.hereMapsPlatform = new H.service.Platform({
-			  			'apikey': 'ReRwqKNLBA7zeTBC27_hlEPk5w6cHv-43WNAoORo_ho'
-					});
-					var defaultLayers = this.hereMapsPlatform.createDefaultLayers();
-					var map = new H.Map(
-			    		document.getElementById('map-container'),
-			    		defaultLayers.vector.normal.map,
-			    		{
-			      			zoom: 10,
-			      			center: { lat: 58.378025, lng: 26.728493 }
-			    		});
-		
-					var ui = H.ui.UI.createDefault(map, defaultLayers);
-					var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-					
 					this.mapMarkersData.forEach(mapMarkerData => {
 						
 						// to fix missing address

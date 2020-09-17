@@ -33,9 +33,3 @@ var app = new Vue({
 window.addEventListener('popstate', () => {
     app.currentRoute = window.location.pathname;
 });
-
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8080;
-}
-app.listen(port);
