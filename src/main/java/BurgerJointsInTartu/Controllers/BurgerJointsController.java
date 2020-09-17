@@ -1,5 +1,6 @@
 package BurgerJointsInTartu.Controllers;
 
+import java.net.URISyntaxException;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +28,8 @@ public class BurgerJointsController {
 			response = new Gson().toJson(mapMarkers);
 			
 		} catch (FoursquareApiException e) {
+			e.printStackTrace();
+		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
 		

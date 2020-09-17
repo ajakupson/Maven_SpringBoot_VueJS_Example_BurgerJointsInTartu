@@ -9,6 +9,7 @@ html, body {
 	margin: 20px;
 	padding: 15px;
 	border: 1px solid lightgray;
+	min-width: 640px;
 }
 .app-container h1 {
 	color: #31d970;
@@ -17,6 +18,7 @@ html, body {
 	margin: 20px;
 	padding: 15px;
 	border: 1px solid lightgray;
+	min-width: 640px;
 }
 .container h1 {
 	color: #31d970;
@@ -59,6 +61,8 @@ a:hover {
 	display: inline-block;
 	margin: 0;
 	padding: 5px 0 0 5px;
+	word-break: break-word;
+	max-width: 100px;
 }
 .burger-img-container {
 	text-align: left;
