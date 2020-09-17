@@ -32,8 +32,8 @@ public class FoursquareService {
 	private final String FOURSQUARE_CLIENT_SECRET = "JFFGBVR5VJGWPKYYGOHYRJ04ITKYAXFYIIW5CJCBALAMOWH5";
 	private FoursquareApi foursquareApi;
 	
-	private final String AWS_IAM_ACCESS_KEY = "AKIAJSTZ5ZMWXYGLSPFA";
-	private final String AWS_IAM_SECRET_ACCESS_KEY = "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";
+	private final String AWS_IAM_ACCESS_KEY = "{KEY}";
+	private final String AWS_IAM_SECRET_ACCESS_KEY = "{SECRET}";
 	private final String AWS_REGION = "eu-west-1";
 	private final String AWS_API_GATEWAY_ENPOINT = "https://pplkdijj76.execute-api.eu-west-1.amazonaws.com/prod";
 	
