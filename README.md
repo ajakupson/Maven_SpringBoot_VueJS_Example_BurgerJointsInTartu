@@ -8,7 +8,7 @@
 ```
 src/main/
 ├── java/
-|   └── BurgerJointsInTartu/
+|   └── BurgerJointsInTartu/ -- server side
 |       ├── SpringBootMavenExampleBurgerJointsInTartuApplication.java
 |       ├── Config/
 │       |   └── WebConfiguration.java
