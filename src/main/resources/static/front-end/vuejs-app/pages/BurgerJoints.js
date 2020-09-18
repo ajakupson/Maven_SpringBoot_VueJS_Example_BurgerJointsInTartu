@@ -67,7 +67,7 @@ export default {
 													  	<p class="name">${mapMarkerData.name}</p><br/>
 														<p class="address">Address: ${mapMarkerData.address}</p>
 														<div class="burger-img-container">
-															<img src="../front-end/assets/img/hamburger-icon.png"/>
+															<img src="${mapMarkerData.imgUrl}"/>
 														</div>
 													  </div>`;
 											

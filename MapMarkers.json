@@ -1,0 +1,221 @@
+{
+   "mapMarkers" :[
+      {
+         "address":"Võru tänav",
+         "imgUrl":"https://fastly.4sqi.net/img/general/1425x1900/32281188_z_qRpdGHOQX6cih3OAruCyDrN8hNwzr63c6KwRBzKgA.jpg",
+         "lat":58.370674,
+         "lng":26.721903,
+         "name":"Ossu Burger"
+      },
+      {
+         "address":"null",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.370557,
+         "lng":26.715698,
+         "name":"VLND Burger"
+      },
+      {
+         "address":"null",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.37089920043945,
+         "lng":26.760269165039062,
+         "name":"Jess Burger"
+      },
+      {
+         "address":"1 L. Puusepa",
+         "imgUrl":"https://fastly.4sqi.net/img/general/1440x1920/4495867__HsoPFjbsWlCOjVut_11I_LwSNCnvwqm8R_D7bXiYus.jpg",
+         "lat":58.366600623418385,
+         "lng":26.70389632235069,
+         "name":"Grillburger"
+      },
+      {
+         "address":"null",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.385573,
+         "lng":26.694673,
+         "name":"SIMSIM burgerikohvik"
+      },
+      {
+         "address":"null",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.38764190673828,
+         "lng":26.714160919189453,
+         "name":"hamburger pizza"
+      },
+      {
+         "address":"null",
+         "imgUrl":"https://fastly.4sqi.net/img/general/720x960/28975291_vPyjLI3o6HYa2aDOSWLdzwjZbZFgnDxOk49qiB-dm8g.jpg",
+         "lat":58.365264892578125,
+         "lng":26.701845169067383,
+         "name":"Ümera Hamburger"
+      },
+      {
+         "address":"Turu 6A",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.37663746974459,
+         "lng":26.732141660141064,
+         "name":"McDonald's"
+      },
+      {
+         "address":"null",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.35999224581803,
+         "lng":26.72437422027702,
+         "name":"McDonald's"
+      },
+      {
+         "address":"Ringtee 69b/73",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.36011831704449,
+         "lng":26.676002299157688,
+         "name":"McDonald's"
+      },
+      {
+         "address":"Vabaduse pst 3",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.380645154095056,
+         "lng":26.725087512990033,
+         "name":"Hesburger"
+      },
+      {
+         "address":"Riia 2",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.377411820243395,
+         "lng":26.728975461598846,
+         "name":"Hesburger - Kvartali"
+      },
+      {
+         "address":"Anne 38",
+         "imgUrl":"https://fastly.4sqi.net/img/general/720x960/3456239_oGGIuOU2q2TmyAPukWhVmgV3OtDt_IcejNTU_E30KQs.jpg",
+         "lat":58.3781792193489,
+         "lng":26.751062143377148,
+         "name":"Hesburger"
+      },
+      {
+         "address":"Kalda tee 1c/1d",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.373424080861724,
+         "lng":26.75034183200793,
+         "name":"Hesburger - Eedeni keskus"
+      },
+      {
+         "address":"Turu tn. 32",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.36094831859306,
+         "lng":26.740863719285038,
+         "name":"Hesburger - Jazz"
+      },
+      {
+         "address":"Vitamiini 1",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.37606,
+         "lng":26.697071,
+         "name":"Hesburger"
+      },
+      {
+         "address":"null",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.37715009594942,
+         "lng":26.73198314979924,
+         "name":"Statoil Autopesula"
+      },
+      {
+         "address":"null",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.37340516932991,
+         "lng":26.751979756356484,
+         "name":"Statoil Selvepesula"
+      },
+      {
+         "address":"Turu 6A",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.37663746974459,
+         "lng":26.732141660141064,
+         "name":"McDonald's"
+      },
+      {
+         "address":"Turu 6",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.377044310412884,
+         "lng":26.73146725984265,
+         "name":"Circle K"
+      },
+      {
+         "address":"Turu 32a",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.36401946084218,
+         "lng":26.74059447996558,
+         "name":"Turu 32a Statoil"
+      },
+      {
+         "address":"null",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.37713320705317,
+         "lng":26.73244795467807,
+         "name":"Statoili tagumine parkla"
+      },
+      {
+         "address":"Narva maantee 21",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.38203855080291,
+         "lng":26.728484330673695,
+         "name":"Narva mnt Circle K"
+      },
+      {
+         "address":"null",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.379671,
+         "lng":26.766,
+         "name":"kivilinna statoil"
+      },
+      {
+         "address":"Kalda tee 1-3",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.372935737273075,
+         "lng":26.75380277332962,
+         "name":"Circle K"
+      },
+      {
+         "address":"Võru mnt. 81",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.35570449717456,
+         "lng":26.72162677419876,
+         "name":"Circle K"
+      },
+      {
+         "address":"Ringtee 71",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.360152899565136,
+         "lng":26.67711863645633,
+         "name":"Statoili pesutänav"
+      },
+      {
+         "address":"Astelpaju 2a",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.406713531410794,
+         "lng":26.709305138813495,
+         "name":"Circle K"
+      },
+      {
+         "address":"Ringtee 71",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.36041142406978,
+         "lng":26.677386123494152,
+         "name":"Circle K"
+      },
+      {
+         "address":"Võru mnt / Ringtee",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.34296670831174,
+         "lng":26.714957333959866,
+         "name":"Circle K"
+      },
+      {
+         "address":"null",
+         "imgUrl":"../front-end/assets/img/hamburger-icon.png",
+         "lat":58.23094177246094,
+         "lng":26.4327449798584,
+         "name":"statoil vist"
+      }
+   ]
+}

@@ -50,4 +50,10 @@ public class MapMarker {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "MapMarker [lat=" + lat + ", lng=" + lng + ", imgUrl=" + imgUrl + ", address=" + address + ", name="
+				+ name + "]";
+	}
 }
