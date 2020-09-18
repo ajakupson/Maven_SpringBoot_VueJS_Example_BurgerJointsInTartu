@@ -18,7 +18,8 @@ src/main/
 │       ├── Models/
 │       |   ├── CompactVenueMod.java
 |       |   ├── PhotoGroupWrapper.java
-│       |   └── MapMarker.java
+│       |   ├── MapMarker.java
+|       |   └── MapMarkersArray.java
 │       ├── Services/
 │       |   ├── FoursquareService.java
 │       |   └── aws/
